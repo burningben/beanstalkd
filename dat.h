@@ -226,10 +226,12 @@ size_t get_all_jobs_used(void);
 extern struct ms tubes;
 
 tube make_tube(const char *name);
+void tube_clear(tube t);
 void tube_dref(tube t);
 void tube_iref(tube t);
 tube tube_find(const char *name);
 tube tube_find_or_make(const char *name);
+void tube_empty_trash(Wal *w);
 #define TUBE_ASSIGN(a,b) (tube_dref(a), (a) = (b), tube_iref(a))
 
 
